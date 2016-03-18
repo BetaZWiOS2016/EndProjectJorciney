@@ -11,9 +11,15 @@ import Foundation
 class Expense {
     var title: String
     var amount: Double
+    var description:String
+    var category: Category
     
-    init(title:String, amount:Double){
+
+    init(title:String, amount:Double, description:String, category:Category){
         self.title=title;
         self.amount=amount;
+        self.description=description
+        self.category=category
+        Budget.expensesAmount+=amount
     }
 }
