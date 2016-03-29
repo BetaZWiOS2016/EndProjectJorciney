@@ -10,14 +10,11 @@ import Foundation
 class Income {
     var title: String
     var amount: Double
-     var incomeArray:[Income]
+    
     
     
     init(title:String, amount:Double){
         self.title=title;
         self.amount=amount;
-        self.incomeArray=[Income]()
-        self.incomeArray.append(self)
-        Budget.incomeAmount+=amount
     }
 }

@@ -13,17 +13,21 @@ class Category {
     var title: String
     var imageName: String
     var expensesArray:[Expense]
-    var categories:[Category]
+   
+    init( title : String ){
+        self.title = title;
+        self.expensesArray = [Expense]()
+        self.imageName = ""
+    }
+    
+    
     
     init(title:String, imageName:String){
         self.title=title;
         self.imageName=imageName;
         self.expensesArray=[Expense]()
-        self.categories=[Category]()
-        self.categories.append(self)
-        
     }
-
+    
     
     
     init(title:String, imageName:String, expense: Expense){
@@ -31,7 +35,5 @@ class Category {
         self.imageName=imageName;
         self.expensesArray=[Expense]()
         self.expensesArray.append(expense)
-        self.categories=[Category]()
-        self.categories.append(self)
     }
 }
