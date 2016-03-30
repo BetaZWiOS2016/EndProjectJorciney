@@ -12,7 +12,6 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     
     //MARK: - Property declaration
     var singleton=ExpenseTrackerManager.sharedInstance;
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -35,9 +34,11 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1;    }
     
-    /*func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    
-    }*/
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        self.performSegueWithIdentifier("categoryIdentifier", sender: self.singleton.categories[indexPath.row])
+    }
+
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
@@ -70,6 +71,16 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         let width = self.collectionView.bounds.width / 3
         return CGSize(width: width, height: width)
     }
+    
+    //MARK: - Methods that were Overriden
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "categoryIdentifier" {
+            let expense:ExpensesPerCategoryViewController = segue.destinationViewController as! ExpensesPerCategoryViewController
+            expense.category = sender as? Category
+        }
+    }
+    
+   
     
     /*
     // MARK: - Navigation

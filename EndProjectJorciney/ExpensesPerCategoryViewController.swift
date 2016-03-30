@@ -12,6 +12,9 @@ class ExpensesPerCategoryViewController: UIViewController, UITableViewDelegate,U
     
     //MARK: - Property declaration
     var singleton=ExpenseTrackerManager.sharedInstance;
+    var category:Category?
+
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -29,12 +32,14 @@ class ExpensesPerCategoryViewController: UIViewController, UITableViewDelegate,U
         return 1;
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return singleton.categories[singleton.currentCategory].expensesArray.count;
-        return 10;
+ 
+        return self.category?.expensesArray.count ?? 1
+        //return 10;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell=self.tableView.dequeueReusableCellWithIdentifier("cellExpensePerCategoryIdentifier", forIndexPath: indexPath)
+        let cell=self.tableView.dequeueReusableCellWithIdentifier("cellExpensePerCategoryIdentifier", forIndexPath: indexPath) as! ExpensesPerCategoryTableViewCell
+        cell.setUpCell(self.category!.expensesArray[indexPath.row])
         return cell;
     }
     /*

@@ -13,11 +13,13 @@ class Category {
     var title: String
     var imageName: String
     var expensesArray:[Expense]
+    var uuid = NSUUID().UUIDString
    
     init( title : String ){
         self.title = title;
         self.expensesArray = [Expense]()
         self.imageName = ""
+        uuid = NSUUID().UUIDString
     }
     
     
@@ -26,6 +28,7 @@ class Category {
         self.title=title;
         self.imageName=imageName;
         self.expensesArray=[Expense]()
+        uuid = NSUUID().UUIDString
     }
     
     
@@ -35,5 +38,6 @@ class Category {
         self.imageName=imageName;
         self.expensesArray=[Expense]()
         self.expensesArray.append(expense)
+        uuid = NSUUID().UUIDString
     }
 }

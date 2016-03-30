@@ -15,6 +15,8 @@
 		EF80309A1CAA97D500F4B7C7 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8030991CAA97D500F4B7C7 /* OverviewViewController.swift */; };
 		EF94C1FB1C9C5E7A0015FFDA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF94C1FA1C9C5E7A0015FFDA /* Category.swift */; };
 		EF94C1FD1C9C60990015FFDA /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF94C1FC1C9C60990015FFDA /* Expense.swift */; };
+		EFA931411CABD45100A25ED7 /* ExpensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA931401CABD45100A25ED7 /* ExpensesTableViewCell.swift */; };
+		EFA931451CABEA0700A25ED7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA931441CABEA0700A25ED7 /* Utils.swift */; };
 		EFE367A11C9C54DA0052A715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE367A01C9C54DA0052A715 /* AppDelegate.swift */; };
 		EFE367A31C9C54DA0052A715 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE367A21C9C54DA0052A715 /* MainViewController.swift */; };
 		EFE367A61C9C54DA0052A715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFE367A41C9C54DA0052A715 /* Main.storyboard */; };
@@ -22,8 +24,11 @@
 		EFE367AB1C9C54DA0052A715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFE367A91C9C54DA0052A715 /* LaunchScreen.storyboard */; };
 		EFE367B61C9C54DA0052A715 /* EndProjectJorcineyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE367B51C9C54DA0052A715 /* EndProjectJorcineyTests.swift */; };
 		EFE367C11C9C54DA0052A715 /* EndProjectJorcineyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE367C01C9C54DA0052A715 /* EndProjectJorcineyUITests.swift */; };
+		EFE6C3591CAC11A000EAB927 /* TableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE6C3581CAC11A000EAB927 /* TableViewHeaderCell.swift */; };
+		EFE6C35D1CAC129A00EAB927 /* TableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFE6C35C1CAC129A00EAB927 /* TableSectionHeader.xib */; };
 		EFF83D5C1CAAB17D00C55952 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF83D5B1CAAB17D00C55952 /* CategoriesCollectionViewCell.swift */; };
 		EFF83D5E1CAAC63D00C55952 /* ExpensesPerCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF83D5D1CAAC63D00C55952 /* ExpensesPerCategoryViewController.swift */; };
+		EFF83D601CAAD12400C55952 /* ExpensesPerCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF83D5F1CAAD12400C55952 /* ExpensesPerCategoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,8 @@
 		EF8030991CAA97D500F4B7C7 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		EF94C1FA1C9C5E7A0015FFDA /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		EF94C1FC1C9C60990015FFDA /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		EFA931401CABD45100A25ED7 /* ExpensesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesTableViewCell.swift; sourceTree = "<group>"; };
+		EFA931441CABEA0700A25ED7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		EFE3679D1C9C54DA0052A715 /* EndProjectJorciney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EndProjectJorciney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE367A01C9C54DA0052A715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFE367A21C9C54DA0052A715 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -67,8 +74,11 @@
 		EFE367BC1C9C54DA0052A715 /* EndProjectJorcineyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EndProjectJorcineyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE367C01C9C54DA0052A715 /* EndProjectJorcineyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndProjectJorcineyUITests.swift; sourceTree = "<group>"; };
 		EFE367C21C9C54DA0052A715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFE6C3581CAC11A000EAB927 /* TableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHeaderCell.swift; sourceTree = "<group>"; };
+		EFE6C35C1CAC129A00EAB927 /* TableSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableSectionHeader.xib; sourceTree = "<group>"; };
 		EFF83D5B1CAAB17D00C55952 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFF83D5D1CAAC63D00C55952 /* ExpensesPerCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesPerCategoryViewController.swift; sourceTree = "<group>"; };
+		EFF83D5F1CAAD12400C55952 /* ExpensesPerCategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesPerCategoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +135,10 @@
 				EF8030991CAA97D500F4B7C7 /* OverviewViewController.swift */,
 				EFF83D5B1CAAB17D00C55952 /* CategoriesCollectionViewCell.swift */,
 				EFF83D5D1CAAC63D00C55952 /* ExpensesPerCategoryViewController.swift */,
+				EFF83D5F1CAAD12400C55952 /* ExpensesPerCategoryTableViewCell.swift */,
+				EFA931401CABD45100A25ED7 /* ExpensesTableViewCell.swift */,
+				EFE6C3581CAC11A000EAB927 /* TableViewHeaderCell.swift */,
+				EFE6C35C1CAC129A00EAB927 /* TableSectionHeader.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -136,6 +150,7 @@
 				EF94C1FC1C9C60990015FFDA /* Expense.swift */,
 				EF107A9A1C9CBA0700FE3B1C /* Income.swift */,
 				EF6CB3061C9EAF6D00D74F55 /* ExpenseTrackerManager.swift */,
+				EFA931441CABEA0700A25ED7 /* Utils.swift */,
 			);
 			name = BeanModels;
 			sourceTree = "<group>";
@@ -299,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE6C35D1CAC129A00EAB927 /* TableSectionHeader.xib in Resources */,
 				EFE367AB1C9C54DA0052A715 /* LaunchScreen.storyboard in Resources */,
 				EFE367A81C9C54DA0052A715 /* Assets.xcassets in Resources */,
 				EFE367A61C9C54DA0052A715 /* Main.storyboard in Resources */,
@@ -377,7 +393,10 @@
 				EF6CB3071C9EAF6D00D74F55 /* ExpenseTrackerManager.swift in Sources */,
 				EF94C1FD1C9C60990015FFDA /* Expense.swift in Sources */,
 				EFE367A31C9C54DA0052A715 /* MainViewController.swift in Sources */,
+				EFA931451CABEA0700A25ED7 /* Utils.swift in Sources */,
 				EFE367A11C9C54DA0052A715 /* AppDelegate.swift in Sources */,
+				EFF83D601CAAD12400C55952 /* ExpensesPerCategoryTableViewCell.swift in Sources */,
+				EFA931411CABD45100A25ED7 /* ExpensesTableViewCell.swift in Sources */,
 				EFF83D5C1CAAB17D00C55952 /* CategoriesCollectionViewCell.swift in Sources */,
 				EFF83D5E1CAAC63D00C55952 /* ExpensesPerCategoryViewController.swift in Sources */,
 				EF107A9B1C9CBA0700FE3B1C /* Income.swift in Sources */,
@@ -385,6 +404,7 @@
 				EF80309A1CAA97D500F4B7C7 /* OverviewViewController.swift in Sources */,
 				EF94C1FB1C9C5E7A0015FFDA /* Category.swift in Sources */,
 				EF8030981CAA97B200F4B7C7 /* ExpensesViewController.swift in Sources */,
+				EFE6C3591CAC11A000EAB927 /* TableViewHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

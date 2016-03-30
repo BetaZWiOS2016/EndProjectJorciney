@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class ExpenseTrackerManager {
     
@@ -24,6 +25,9 @@ class ExpenseTrackerManager {
     var incomeArray: [Income]
     
     var currentCategory=0 as Int
+    let dateFormatter = NSDateFormatter()
+    //var ref = Firebase(url: "https://trackexpenseios.firebaseio.com/")
+    //var expensesDictionary:NSDictionary<Int, Expense>
     
     
     
@@ -33,8 +37,10 @@ class ExpenseTrackerManager {
         self.categories = [Category]()
         self.expenses = [Expense]()
         self.incomeArray = [Income]()
+        //self.expensesDictionary=NSDictionary<Int, Expense>()
         self.setValues();
         self.setDefaultCategories()
+        
     }
     
     
@@ -73,7 +79,7 @@ class ExpenseTrackerManager {
         let living = Category(title: "Living", imageName: "living1")
         let transportation = Category(title: "Transportation", imageName: "transportation")
         let social = Category(title: "Social", imageName: "social")
-        let investments = Category(title: "Investment", imageName: "investment2")
+        let investments = Category(title: "Investment", imageName: "investment")
         let education = Category(title: "Education", imageName: "education")
         let medical = Category(title: "Medical", imageName: "medical")
         let bills = Category(title: "Bills", imageName: "bills")
@@ -91,6 +97,15 @@ class ExpenseTrackerManager {
         self.categories.append(medical)
         self.categories.append(bills)
         self.categories.append(others)
+
+        self.expenses.append(Expense(title: "Fuel", amount: 21, description: "Tak was empty, added gas", category: car, date: "20-01-2016"))
+        self.expenses.append(Expense(title: "Garage", amount: 950, description: "Side door repair", category: car))
+        self.expenses.append(Expense(title: "LPG check", amount: 190, description: "LPG computer needed to be checked", category: car))
+        self.expenses.append(Expense(title: "Furniture", amount: 210, description: "Bought table", category: living, date: "17-02-2016"))
+        self.expenses.append(Expense(title: "Movies", amount: 15.50, description: "Went to the movies", category: entertainment, date: "20-01-2016"))
+        
+        self.expenses.append(Expense(title: "Hair cut", amount: 15, description: "Hair cut", category: others, date: "20-01-2016"))
+        //self.addToDb()
         
     }
     
@@ -100,10 +115,31 @@ class ExpenseTrackerManager {
             c.title == cat.title
         })
         return found;
-        
+    }
+   
+    func getFormatedDate(date: NSDate)->String{
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.dateFormat="dd/MM/yyyy"
+        return dateFormatter.stringFromDate(date)
     }
     
+    func getParsedNSDateFromString(dateStr:String) -> NSDate {
+        var dateFmt = NSDateFormatter()
+        dateFmt.timeZone = NSTimeZone.defaultTimeZone()
+        dateFmt.dateFormat = "dd/MM/yyyy"
+        return dateFmt.dateFromString(dateStr)!
+    }
+    /*
+    func addToDb(){
+        for var i = 0; i < self.expenses.count; i++ {
+            self.expensesDictionary[i]=self.expenses[i]
+        }
+
+        
     
-    
+    var usersRef = ref.childByAppendingPath("users")
+
+    usersRef.setValue(expenses as NSArray)
+    }*/
     
 }
