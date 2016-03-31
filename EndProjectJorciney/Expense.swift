@@ -16,9 +16,7 @@ class Expense: Object{
     dynamic var date:NSDate=NSDate()
     dynamic var uuid:String=""
     dynamic var desc:String=""
-    var category: Category?{
-        return linkingObjects(Category.self, forProperty: "expensesArray").first
-    }
+    dynamic var category: Category?
     
     convenience init(title:String, amount:Double, description:String, category:Category){
         self.init()
@@ -27,7 +25,7 @@ class Expense: Object{
         self.date=NSDate()
         self.uuid = NSUUID().UUIDString
         self.desc=description
-        category.expensesArray.append(self)
+        self.category = category
     }
     convenience init(title:String, amount:Double, description:String){
         self.init()
@@ -53,7 +51,7 @@ class Expense: Object{
         self.date=date
         self.uuid = NSUUID().UUIDString
         self.desc=description
-        category.expensesArray.append(self)
+        self.category = category
     }
     convenience init(title:String, amount:Double, description:String, date:NSDate){
         self.init()

@@ -12,9 +12,11 @@ import RealmSwift
 class Category: Object{
     dynamic var title: String = ""
     dynamic var imageName: String=""
-    let expensesArray = List<Expense>()
+    var expensesArray : [Expense]{
+        return linkingObjects(Expense.self, forProperty: "category")
+    }
     dynamic var uuid :String=""
-   
+    
     convenience init( title : String ){
         self.init()
         self.title = title;
@@ -43,7 +45,7 @@ class Category: Object{
         self.init()
         self.title=title;
         self.imageName=imageName;
-        self.expensesArray.append(expense)
+        //expensesArray.append(expense)
         uuid = NSUUID().UUIDString
     }
     

@@ -40,15 +40,23 @@ class MainViewController: UIViewController {
     
     // MARK: - Action Buttons
     func floatingButtonSetup(){
+        var addCategoryController = self.storyboard?.instantiateViewControllerWithIdentifier("addCategory")
+        var addExpenseController = self.storyboard?.instantiateViewControllerWithIdentifier("addExpenseController")
+        
         let categoryButton = ActionButtonItem(title: "Category", image: UIImage(named: "category")!)
-        categoryButton.action = { item in print("Category...") }
+        categoryButton.action = { item in self.navigationController?.pushViewController(addCategoryController!, animated: true)
+        self.actionButton.toggleMenu()
+        
+        }
         
         
         let incomeButton = ActionButtonItem(title: "Income", image: UIImage(named: "income1")!)
-        categoryButton.action = { item in print("Category...") }
+        incomeButton.action = { item in print("Category...") }
         
         let expenseButton = ActionButtonItem(title: "Expense", image: UIImage(named: "bill")!)
-        expenseButton.action = { item in print("Expense...") }
+        expenseButton.action = { item in self.navigationController?.pushViewController(addExpenseController!, animated: true)
+            self.actionButton.toggleMenu()
+        }
         
         
         actionButton = ActionButton(attachedToView: self.view, items: [categoryButton, expenseButton, incomeButton])
