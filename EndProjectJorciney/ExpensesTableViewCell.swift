@@ -25,11 +25,11 @@ class ExpensesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func setUpCell(expense:Expense){
-        self.categoryImageView.image=UIImage(named:expense.category.imageName)
+        self.categoryImageView.image=UIImage(named:expense.category?.imageName ?? "ios")
         self.titleLabel.text=expense.title
         //self.dateLabel.text=ExpenseTrackerManager.sharedInstance.getFormatedDate(expense.date)
         self.amountLabel.text=String(format: "%.2f €", expense.amount)
-        self.descriptionLabel.text=expense.description
+        self.descriptionLabel.text=expense.desc
 
     }
 

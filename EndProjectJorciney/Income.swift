@@ -7,14 +7,21 @@
 //
 
 import Foundation
-class Income {
-    var title: String
-    var amount: Double
+import RealmSwift
+
+class Income:Object {
+    dynamic var title: String=""
+    dynamic var amount: Double=0
+    dynamic var uuid :String=""
     
     
-    
-    init(title:String, amount:Double){
+    convenience init(title:String, amount:Double){
+        self.init()
         self.title=title;
         self.amount=amount;
+        uuid = NSUUID().UUIDString
+    }
+    override class func primaryKey() -> String {
+        return "uuid"
     }
 }

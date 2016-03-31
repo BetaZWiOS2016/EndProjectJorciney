@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ActionButton
 
 class MainViewController: UIViewController {
     var expense:Expense?
@@ -14,9 +15,15 @@ class MainViewController: UIViewController {
     var income:Income?
     var singleton=ExpenseTrackerManager.sharedInstance;
     
-    
+    var actionButton:ActionButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //MARK: - Floating button
+        actionButton = ActionButton(attachedToView: self.view, items: [])
+        
+        floatingButtonSetup()
         
     }
     
@@ -25,48 +32,30 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     //MARK: - Custom methods
     
     
     
     
     // MARK: - Action Buttons
-    @IBAction func addExpenseButton(sender: UIButton) {
-        category=Category(title: "Car")
-        expense=Expense(title:"Qashqai", amount: 51 as Double, description: "Oil change", category:category! )
-        if !self.singleton.isCategoryAlreadyPresent(category!){
-            self.singleton.categories.append(category!)
-        }
-        self.singleton.expenses.append(expense!)
-        category=Category(title: "Car")
-        expense=Expense(title:"Citroen", amount: 90 as Double, description: "Repair", category:category! )
-        if !self.singleton.isCategoryAlreadyPresent(category!){
-            self.singleton.categories.append(category!)
-        }
-        self.singleton.expenses.append(expense!)
-        category=Category(title: "Movies")
-        expense=Expense(title:"Batman", amount: 15 as Double, description: "going to the movies", category:category! )
-        if !self.singleton.isCategoryAlreadyPresent(category!){
-            self.singleton.categories.append(category!)
-        }
-        self.singleton.expenses.append(expense!)
-        for i in singleton.categories{
-        print("Categorie title: \(i.title)")
-        }
-        for i in singleton.expenses{
-            print("Expense title: \(i.title) Amount:\(i.amount)")
-        }
-        self.singleton.setValues()
-        print("Total Amount: \(self.singleton.expensesAmount)")
+    func floatingButtonSetup(){
+        let categoryButton = ActionButtonItem(title: "Category", image: UIImage(named: "category")!)
+        categoryButton.action = { item in print("Category...") }
         
-    }
-    @IBAction func deleteExpenseButton(sender: UIButton) {
-    }
-    @IBAction func addCategoryButton(sender: UIButton) {
-    }
-    @IBAction func deleteCategoryButton(sender: UIButton) {
-    }
-    @IBAction func addIncomeButton(sender: UIButton) {
+        
+        let incomeButton = ActionButtonItem(title: "Income", image: UIImage(named: "income1")!)
+        categoryButton.action = { item in print("Category...") }
+        
+        let expenseButton = ActionButtonItem(title: "Expense", image: UIImage(named: "bill")!)
+        expenseButton.action = { item in print("Expense...") }
+        
+        
+        actionButton = ActionButton(attachedToView: self.view, items: [categoryButton, expenseButton, incomeButton])
+        actionButton.action = { button in button.toggleMenu() }
+        actionButton.setTitle("+", forState: .Normal)
+        actionButton.backgroundColor = UIColor(red: 238.0/255.0, green: 130.0/255.0, blue: 34.0/255.0, alpha:1.0)
+        
     }
 }
 

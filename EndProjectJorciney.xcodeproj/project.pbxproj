@@ -26,6 +26,9 @@
 		EFE367C11C9C54DA0052A715 /* EndProjectJorcineyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE367C01C9C54DA0052A715 /* EndProjectJorcineyUITests.swift */; };
 		EFE6C3591CAC11A000EAB927 /* TableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE6C3581CAC11A000EAB927 /* TableViewHeaderCell.swift */; };
 		EFE6C35D1CAC129A00EAB927 /* TableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFE6C35C1CAC129A00EAB927 /* TableSectionHeader.xib */; };
+		EFF4F4841CAD438400582D43 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4F4831CAD438400582D43 /* AddExpenseViewController.swift */; };
+		EFF4F4861CAD439B00582D43 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4F4851CAD439B00582D43 /* AddCategoryViewController.swift */; };
+		EFF4F4881CAD43AE00582D43 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4F4871CAD43AE00582D43 /* AddIncomeViewController.swift */; };
 		EFF83D5C1CAAB17D00C55952 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF83D5B1CAAB17D00C55952 /* CategoriesCollectionViewCell.swift */; };
 		EFF83D5E1CAAC63D00C55952 /* ExpensesPerCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF83D5D1CAAC63D00C55952 /* ExpensesPerCategoryViewController.swift */; };
 		EFF83D601CAAD12400C55952 /* ExpensesPerCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF83D5F1CAAD12400C55952 /* ExpensesPerCategoryTableViewCell.swift */; };
@@ -76,6 +79,9 @@
 		EFE367C21C9C54DA0052A715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFE6C3581CAC11A000EAB927 /* TableViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHeaderCell.swift; sourceTree = "<group>"; };
 		EFE6C35C1CAC129A00EAB927 /* TableSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableSectionHeader.xib; sourceTree = "<group>"; };
+		EFF4F4831CAD438400582D43 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		EFF4F4851CAD439B00582D43 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		EFF4F4871CAD43AE00582D43 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
 		EFF83D5B1CAAB17D00C55952 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFF83D5D1CAAC63D00C55952 /* ExpensesPerCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesPerCategoryViewController.swift; sourceTree = "<group>"; };
 		EFF83D5F1CAAD12400C55952 /* ExpensesPerCategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesPerCategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -139,6 +145,9 @@
 				EFA931401CABD45100A25ED7 /* ExpensesTableViewCell.swift */,
 				EFE6C3581CAC11A000EAB927 /* TableViewHeaderCell.swift */,
 				EFE6C35C1CAC129A00EAB927 /* TableSectionHeader.xib */,
+				EFF4F4831CAD438400582D43 /* AddExpenseViewController.swift */,
+				EFF4F4851CAD439B00582D43 /* AddCategoryViewController.swift */,
+				EFF4F4871CAD43AE00582D43 /* AddIncomeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -399,10 +408,13 @@
 				EFA931411CABD45100A25ED7 /* ExpensesTableViewCell.swift in Sources */,
 				EFF83D5C1CAAB17D00C55952 /* CategoriesCollectionViewCell.swift in Sources */,
 				EFF83D5E1CAAC63D00C55952 /* ExpensesPerCategoryViewController.swift in Sources */,
+				EFF4F4841CAD438400582D43 /* AddExpenseViewController.swift in Sources */,
 				EF107A9B1C9CBA0700FE3B1C /* Income.swift in Sources */,
 				EF8030961CAA979700F4B7C7 /* CategoriesViewController.swift in Sources */,
 				EF80309A1CAA97D500F4B7C7 /* OverviewViewController.swift in Sources */,
+				EFF4F4861CAD439B00582D43 /* AddCategoryViewController.swift in Sources */,
 				EF94C1FB1C9C5E7A0015FFDA /* Category.swift in Sources */,
+				EFF4F4881CAD43AE00582D43 /* AddIncomeViewController.swift in Sources */,
 				EF8030981CAA97B200F4B7C7 /* ExpensesViewController.swift in Sources */,
 				EFE6C3591CAC11A000EAB927 /* TableViewHeaderCell.swift in Sources */,
 			);

@@ -24,9 +24,9 @@ class ExpensesPerCategoryTableViewCell: UITableViewCell {
     }
     func setUpCell(expense:Expense){
         self.titleLabel.text=expense.title
-        self.dateLabel.text=ExpenseTrackerManager.sharedInstance.getFormatedDate(expense.date)
+        self.dateLabel.text=getFormatedDate(expense.date)
         self.amountLabel.text=String(format: "%.2f €", expense.amount)
-        self.descriptionLabel.text=expense.description
+        self.descriptionLabel.text=expense.desc
     }
     
 }
