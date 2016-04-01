@@ -13,6 +13,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     
     var datasource=[[Expense]]()
+    var refreshControl: UIRefreshControl!
   
     
     
@@ -23,7 +24,18 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         let nib = UINib(nibName: "TableSectionHeader", bundle: nil)
         tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: "TableSectionHeader")
         
-    setHeaderArray()
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(self.refreshControl)
+        
+        
+    
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        setHeaderArray()
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,6 +76,15 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     
+    
+    func refresh(sender:AnyObject)
+    {
+        self.setHeaderArray()
+        self.tableView.reloadData();
+        self.refreshControl.endRefreshing()
+    }
+    
+    
     func setHeaderArray(){
         /*for e in ExpenseTrackerManager.sharedInstance.expenses{
             tempTitles.append(self.singleton.getFormatedDate(e.date))
@@ -76,7 +97,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.headerTitles.append(e)
             }
         }*/
-        
+        self.datasource.removeAll(keepCapacity: true)
         let orderedExpenses = ExpenseTrackerManager.sharedInstance.expenses.sort({$0.date.compare($1.date) == NSComparisonResult.OrderedAscending })
         
         var currentDate=""

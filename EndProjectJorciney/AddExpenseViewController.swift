@@ -10,6 +10,7 @@ import UIKit
 
 class AddExpenseViewController: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate{
     
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
@@ -21,6 +22,7 @@ class AddExpenseViewController: UIViewController , UIPickerViewDataSource, UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryPickerView.selectRow(4, inComponent: 0, animated: true)
+ 
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,7 +34,10 @@ class AddExpenseViewController: UIViewController , UIPickerViewDataSource, UIPic
     
     //MARK: - Action Buttons
     @IBAction func saveButton(sender: UIButton) {
-        var tempExpense=Expense(title: self.titleTextField.text!, amount: Double(self.amountTextField.text!) ?? 0, description: self.descriptionTextField.text!)
+        self.datePicker.resignFirstResponder()
+        var date=datePicker.date
+        
+        var tempExpense=Expense(title: self.titleTextField.text! ?? "Ramdon", amount: Double(self.amountTextField.text!) ?? 0, description: self.descriptionTextField.text! ?? "", date: date )
         tempExpense.category=self.category
         
         ExpenseTrackerManager.sharedInstance.createExpense(tempExpense)
@@ -65,7 +70,7 @@ class AddExpenseViewController: UIViewController , UIPickerViewDataSource, UIPic
     {
         category=pickerDataSource[row]
     }
-    
+  
     
     
     /*

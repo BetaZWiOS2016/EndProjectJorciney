@@ -40,7 +40,6 @@ class AddCategoryViewController: UIViewController {
     
     
     
-    
     //MARK: - PickerView Lifecycle
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1

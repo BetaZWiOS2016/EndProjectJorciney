@@ -27,7 +27,7 @@ class ExpenseTrackerManager {
     let dateFormatter = NSDateFormatter()
     
     var categories: [Category]{
-        return realm.objects(Category).arrayValue
+        return realm.objects(Category).sorted("title").arrayValue
     }
     
     var incomeArray: [Income]{

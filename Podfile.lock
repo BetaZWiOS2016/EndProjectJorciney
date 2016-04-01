@@ -4,6 +4,9 @@ PODS:
   - Charts (2.2.3):
     - Charts/Core (= 2.2.3)
   - Charts/Core (2.2.3)
+  - Charts/Realm (2.2.3):
+    - Charts/Core
+    - RealmSwift (~> 0.97)
   - Firebase (2.5.1)
   - Kingfisher (2.1.0)
   - Realm (0.98.6):
@@ -17,6 +20,7 @@ DEPENDENCIES:
   - ActionButton
   - Alamofire (~> 3.0)
   - Charts
+  - Charts/Realm
   - Firebase (>= 2.5.1)
   - Kingfisher (~> 2.1)
   - RealmSwift

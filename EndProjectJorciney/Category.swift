@@ -17,6 +17,19 @@ class Category: Object{
     }
     dynamic var uuid :String=""
     
+    var expensesSum:Double{
+        var sum:Double=0
+        print("******")
+        print("Category = \(self.title)")
+        for e in expensesArray{
+            print("Find expense = \(e.title) - \(e.amount)")
+            sum+=e.amount
+        }
+        print("******")
+        return sum
+    }
+    
+    
     convenience init( title : String ){
         self.init()
         self.title = title;
